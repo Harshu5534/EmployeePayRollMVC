@@ -6,10 +6,13 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
+a {
+    color: blue;
+}
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+  color: blue;
 }
 
 .btn-primary {
@@ -60,7 +63,7 @@ html {
 
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 .footer {
   position: absolute;
