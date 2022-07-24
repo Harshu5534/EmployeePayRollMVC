@@ -118,3 +118,7 @@
     margin-bottom: 1rem;
     margin-top: 1rem;
 }
+a {
+    color: blue;
+    padding-left: 45px;
+}

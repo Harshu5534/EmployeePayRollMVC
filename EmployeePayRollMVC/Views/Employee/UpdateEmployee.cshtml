@@ -4,38 +4,63 @@
     ViewData["Title"] = "UpdateEmployee";
 }
 
-<h1>UpdateEmployee</h1>
+<div class="header-content header">
+    <div class="logo">
+        <a class="icon"> <img src="~/assets/Project_Images/logo.png"></a>
+        <div >
+            <span class="emp-text">EMPLOYEE</span><br>
+            <span class="emp-text payroll">PAYROLL</span>
+        </div>
+    </div>
+</div>
 
-<h4>EmployeeModel</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="UpdateEmployee">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @*<div class="form-group">
+            <div class="form-group">
                 <label asp-for="Emp_id" class="control-label"></label>
                 <input asp-for="Emp_id" class="form-control" />
                 <span asp-validation-for="Emp_id" class="text-danger"></span>
-            </div>*@
+            </div>
             <div class="form-group">
                 <label asp-for="Emp_name" class="control-label"></label>
                 <input asp-for="Emp_name" class="form-control" />
                 <span asp-validation-for="Emp_name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+             <div class="form-group">
                 <label asp-for="Profile_img" class="control-label"></label>
-                <input asp-for="Profile_img" class="form-control" />
-                <span asp-validation-for="Profile_img" class="text-danger"></span>
+                <div class="profile-radio-content profile-control"></div>
+                        @Html.RadioButtonFor(model => model.Profile_img, "~/assets/Project_Images/Female (3) .png")
+                        <img class="Profile-image-1 " src = "~/assets/Project_Images/Female (3) .png"  />
+                        @Html.RadioButtonFor(model => model.Profile_img, "~/assets/Project_Images/Male (1).png")
+                        <img class="Profile-image-1 " src = "~/assets/Project_Images/Male (1).png"  />
+                         @Html.RadioButtonFor(model => model.Profile_img, "~/assets/Project_Images/Female (5).png")
+                        <img class="Profile-image-1 " src = "~/assets/Project_Images/Female (5).png"  />
+                         @Html.RadioButtonFor(model => model.Profile_img, "~/assets/Project_Images/Male (2).png")
+                        <img class="Profile-image-1 " src = "~/assets/Project_Images/Male (2).png"  />
+                 <div/>
+                 <span asp-validation-for="Profile_img" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
-                <input asp-for="Gender" class="form-control" />
-                <span asp-validation-for="Gender" class="text-danger"></span>
-            </div>
+                <select asp-for="Gender" class="form-control" >
+                    <option>Male</option> s
+                    <option>Female</option> 
+                </select>
+             </div>
             <div class="form-group">
                 <label asp-for="Department" class="control-label"></label>
-                <input asp-for="Department" class="form-control" />
-                <span asp-validation-for="Department" class="text-danger"></span>
+                 <select asp-for="Department" class="form-control">
+                    <option value="HR">HR</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Engineers">Engineers</option>
+                    <option value="Others">Others</option>
+                </select>
+                @*<input asp-for="Department" class="form-control" />
+                <span asp-validation-for="Department" class="text-danger"></span>*@
             </div>
             <div class="form-group">
                 <label asp-for="Salary" class="control-label"></label>
@@ -54,13 +79,10 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="GetResult">Back to List</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="GetResult">Back to List</a>
 </div>
 
 @section Scripts {

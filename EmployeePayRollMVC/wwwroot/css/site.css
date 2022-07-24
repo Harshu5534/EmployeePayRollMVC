@@ -12,7 +12,8 @@ a {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: blue;
+    color: blue;
+    padding-left: 55px;
 }
 
 .btn-primary {
